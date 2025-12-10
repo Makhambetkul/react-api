@@ -255,6 +255,25 @@ app.get("/quizzes/:quizId/categories/:categoryId", (req, res) => {
 });
 
 
+app.get("/quiz-by-category/:id", (req, res) => {
+  const { id } = req.params;
+
+  for (const quiz of quizzes) {
+    const category = quiz.categories.find(cat => cat.id === id);
+    if (category) {
+      return res.json({
+        id: category.id,
+        title: category.name,
+        questions: category.questions
+      });
+    }
+  }
+
+  res.status(404).json({ error: "Category not found" });
+});
+
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
