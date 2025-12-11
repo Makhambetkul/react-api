@@ -219,7 +219,115 @@ const quizzes = [
         ]
       }
     ]
-  }
+  },
+  {
+  title: "Avatar: The Last Airbender",
+  categories: [
+    {
+      id: "aang",
+      name: "Aang",
+      questions: [
+        {
+          id: 601,
+          question: "What element is Aang's native?",
+          options: ["Air", "Water", "Fire", "Earth"],
+          correctAnswer: "Air",
+          difficulty: "easy",
+          explanation: "Aang is an Air Nomad.",
+          image: null
+        },
+        {
+          id: 602,
+          question: "Who teaches Aang firebending?",
+          options: ["Zuko", "Iroh", "Azula", "Toph"],
+          correctAnswer: "Zuko",
+          difficulty: "medium",
+          explanation: "Zuko becomes Aang's firebending teacher.",
+          image: null
+        }
+      ]
+    },
+    {
+      id: "katara",
+      name: "Katara",
+      questions: [
+        {
+          id: 603,
+          question: "What tribe is Katara from?",
+          options: ["Southern Water Tribe", "Northern Water Tribe", "Fire Nation", "Earth Kingdom"],
+          correctAnswer: "Southern Water Tribe",
+          difficulty: "easy",
+          explanation: "Katara is from the Southern Water Tribe.",
+          image: null
+        },
+        {
+          id: 604,
+          question: "Who is Katara’s brother?",
+          options: ["Sokka", "Zuko", "Bumi", "Jet"],
+          correctAnswer: "Sokka",
+          difficulty: "easy",
+          explanation: "Sokka is her older brother.",
+          image: null
+        }
+      ]
+    }
+  ]
+},
+{
+  title: "Teen Titans Go!",
+  categories: [
+    {
+  id: "robin",
+  name: "Robin",
+  questions: [
+    {
+      id: 701,
+      question: "What is Robin's signature weapon?",
+      options: ["Batarang", "Staff", "Boomerang", "Sword"],
+      correctAnswer: "Staff",
+      difficulty: "easy",
+      explanation: "Robin often uses a collapsible staff in battles.",
+      image: null
+    },
+    {
+      id: 702,
+      question: "Who is Robin secretly in love with?",
+      options: ["Raven", "Starfire", "Jinx", "Terra"],
+      correctAnswer: "Starfire",
+      difficulty: "easy",
+      explanation: "Robin has an obvious crush on Starfire.",
+      image: null
+    }
+  ]
+},
+{
+  id: "beastboy",
+  name: "Beast Boy",
+  questions: [
+    {
+      id: 703,
+      question: "What animal can Beast Boy turn into?",
+      options: ["Any animal", "Only wolves", "Dragons", "Bats"],
+      correctAnswer: "Any animal",
+      difficulty: "medium",
+      explanation: "Beast Boy can transform into any animal.",
+      image: null
+    },
+    {
+      id: 704,
+      question: "What color is Beast Boy's skin?",
+      options: ["Green", "Blue", "Red", "Yellow"],
+      correctAnswer: "Green",
+      difficulty: "easy",
+      explanation: "Beast Boy has green skin and hair.",
+      image: null
+    }
+  ]
+}
+
+  ]
+}
+
 ];
 
 
