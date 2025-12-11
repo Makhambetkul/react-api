@@ -399,30 +399,36 @@ app.get("/search", (req, res) => {
 
   const results = [];
 
-  quizzes.forEach((quiz, quizIndex) => {
+  quizzes.forEach((quiz) => {
+
     
     if (quiz.title.toLowerCase().includes(query)) {
-      results.push({ type: "quiz", quizIndex, title: quiz.title });
+      results.push({
+        type: "quiz",
+        id: quiz.id,
+        title: quiz.title
+      });
     }
 
-    quiz.categories.forEach((category, categoryIndex) => {
-      
+    
+    quiz.categories.forEach((category) => {
+
       if (category.name.toLowerCase().includes(query)) {
         results.push({
           type: "category",
-          quizIndex,
-          categoryIndex,
+          quizId: quiz.id,
+          id: category.id,
           name: category.name
         });
       }
 
+      
       category.questions.forEach((q) => {
-        
         if (q.question.toLowerCase().includes(query)) {
           results.push({
             type: "question",
-            quizIndex,
-            categoryIndex,
+            quizId: quiz.id,
+            categoryId: category.id,
             question: q.question
           });
         }
@@ -432,3 +438,4 @@ app.get("/search", (req, res) => {
 
   res.json(results);
 });
+
