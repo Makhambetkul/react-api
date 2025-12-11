@@ -9,6 +9,7 @@ app.use(express.json());
 
 const quizzes = [
   {
+    id: 1,
     title: "Adventure Time",
     categories: [
       {
@@ -62,6 +63,7 @@ const quizzes = [
     ]
   },
   {
+    id: 2,
     title: "The Amazing World of Gumball",
     categories: [
       {
@@ -115,6 +117,7 @@ const quizzes = [
     ]
   },
   {
+    id: 3,
     title: "Regular Show",
     categories: [
       {
@@ -168,6 +171,7 @@ const quizzes = [
     ]
   },
   {
+    id: 4,
     title: "SpongeBob SquarePants",
     categories: [
       {
@@ -221,6 +225,7 @@ const quizzes = [
     ]
   },
   {
+  id: 5,
   title: "Avatar: The Last Airbender",
   categories: [
     {
@@ -274,6 +279,7 @@ const quizzes = [
   ]
 },
 {
+  id: 6,
   title: "Teen Titans Go!",
   categories: [
     {
@@ -333,7 +339,7 @@ const quizzes = [
 
 app.get("/quizzes", (req, res) => {
   const summary = quizzes.map((quiz, i) => ({
-    id: i + 1,
+    id: quiz.id,
     title: quiz.title,
     totalCategories: quiz.categories.length,
     characters: quiz.categories.map(cat => cat.name)
