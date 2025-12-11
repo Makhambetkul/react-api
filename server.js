@@ -385,3 +385,44 @@ app.get("/quiz-by-category/:id", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
+app.get("/search", (req, res) => {
+  const query = req.query.query?.toLowerCase();
+  if (!query) return res.status(400).json({ error: "Query is required" });
+
+  const results = [];
+
+  quizzes.forEach((quiz, quizIndex) => {
+    
+    if (quiz.title.toLowerCase().includes(query)) {
+      results.push({ type: "quiz", quizIndex, title: quiz.title });
+    }
+
+    quiz.categories.forEach((category, categoryIndex) => {
+      
+      if (category.name.toLowerCase().includes(query)) {
+        results.push({
+          type: "category",
+          quizIndex,
+          categoryIndex,
+          name: category.name
+        });
+      }
+
+      category.questions.forEach((q) => {
+        
+        if (q.question.toLowerCase().includes(query)) {
+          results.push({
+            type: "question",
+            quizIndex,
+            categoryIndex,
+            question: q.question
+          });
+        }
+      });
+    });
+  });
+
+  res.json(results);
+});
