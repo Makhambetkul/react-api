@@ -413,14 +413,7 @@ app.get("/search", (req, res) => {
     
     quiz.categories.forEach((category) => {
 
-      if (category.name.toLowerCase().includes(query)) {
-        results.push({
-          type: "category",
-          quizId: quiz.id,
-          id: category.id,
-          name: category.name
-        });
-      }
+      
 
       
       category.questions.forEach((q) => {
